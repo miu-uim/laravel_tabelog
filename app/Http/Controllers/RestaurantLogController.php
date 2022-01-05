@@ -28,18 +28,6 @@ class RestaurantLogController extends Controller
         return view('logs.index', compact('logs'));
     }
 
-    // public function select()
-    // {
-
-    //     // dd($auth_id);
-    //     // $logs = DB::table('restaurant_logs')->where('user_id', $auth_id)->first();
-    //     // $logs = RestaurantLog::find($auth_id);
-    //     $query = DB::table('restaurant_logs');
-
-    //     $logs = $query->paginate(20);
-    //     return view('logs.select', compact('logs'));
-    // }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -127,5 +115,9 @@ class RestaurantLogController extends Controller
     public function destroy($id)
     {
         //
+        $log = RestaurantLog::find($id);
+        $log->delete();
+
+        return redirect('logs/index');
     }
 }

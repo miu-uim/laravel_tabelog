@@ -19,9 +19,10 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'logs', 'middleware' => 'auth'], function () {
     Route::get('index', 'RestaurantLogController@index')->name('logs.index');
-    // Route::get('select', 'RestaurantLogController@select')->name('logs.select');
     Route::get('create', 'RestaurantLogController@create')->name('logs.create');
     Route::post('store', 'RestaurantLogController@store')->name('logs.store');
+    Route::get('show/{id}', 'RestaurantLogController@show')->name('logs.show');
+    Route::post('destroy/{id}', 'RestaurantLogController@destroy')->name('logs.destroy');
 });
 
 

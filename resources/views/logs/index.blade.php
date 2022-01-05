@@ -47,8 +47,15 @@
                                 @else
                                 <td>-</td>
                                 @endif
-                                <td><button type="submit" class="btn btn-secondary">詳細</button></td>
-                                <td><button type="submit" class="btn btn-danger">削除</button></td>
+                                <!-- <td><button type="submit" class="btn btn-secondary">詳細</button></td> -->
+                                <td><a href="{{route('logs.show',['id'=>$log->id])}}"><button type="submit" class="btn btn-secondary">詳細</button></a></td>
+                                <td>
+                                    <form method="POST" action="{{route('logs.destroy',['id'=>$log->id])}}">
+                                        @csrf
+                                        <a href="#"><button type="submit" class="btn btn-danger">削除</button></a>
+                                    </form>
+
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
