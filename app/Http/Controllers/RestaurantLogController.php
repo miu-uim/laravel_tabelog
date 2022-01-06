@@ -9,6 +9,7 @@ use App\Models\RestaurantLog;
 use Illuminate\Support\Facades\DB;
 
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class RestaurantLogController extends Controller
 {
@@ -25,6 +26,12 @@ class RestaurantLogController extends Controller
 
         $query->select('id', 'url', 'name', 'location', 'gone', 'gone_date', 'created_at')->where('user_id', $auth_id);
         $logs = $query->paginate(20);
+        // dd(gettype($logs[0]->gone_date));
+        // $date = new Carbon();
+        $date = Carbon::now(); // 現在時刻
+        // $date->format('Y年m月d日');
+        // dd($date);
+        // echo (gettype($date->format('Y-m-d')));
         return view('logs.index', compact('logs'));
     }
 
@@ -107,6 +114,18 @@ class RestaurantLogController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $log = RestaurantLog::find($id);
+        $log->url = $request->input('url');
+        $log->name = $request->input('name');
+        $log->location = $request->input('location');
+        if ($request->input('gone')) {
+            $log->gone = $request->input('gone');
+        }
+        $log->gone_date = $request->input('gone_date');
+
+        $log->save();
+
+        return redirect('logs/index');
     }
 
     /**

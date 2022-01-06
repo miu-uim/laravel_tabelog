@@ -80,7 +80,7 @@
                         行った日
                         <input type="date" name="gone_date" id="gone_date" value="{{$log->gone_date}}" />
                         <br>
-                        <input class="btn btn-info" type="submit" value="登録する" />
+                        <input class="btn btn-info" type="submit" value="更新する" />
                     </form>
 
                 </div>
