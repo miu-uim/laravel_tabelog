@@ -22,6 +22,8 @@ Route::group(['prefix' => 'logs', 'middleware' => 'auth'], function () {
     Route::get('create', 'RestaurantLogController@create')->name('logs.create');
     Route::post('store', 'RestaurantLogController@store')->name('logs.store');
     Route::get('show/{id}', 'RestaurantLogController@show')->name('logs.show');
+    Route::get('edit/{id}', 'RestaurantLogController@edit')->name('logs.edit');
+    Route::post('update/{id}', 'RestaurantLogController@update')->name('logs.update');
     Route::post('destroy/{id}', 'RestaurantLogController@destroy')->name('logs.destroy');
 });
 

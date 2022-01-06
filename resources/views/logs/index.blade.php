@@ -52,7 +52,7 @@
                                 <td>
                                     <form method="POST" action="{{route('logs.destroy',['id'=>$log->id])}}">
                                         @csrf
-                                        <a href="#"><button type="submit" class="btn btn-danger">削除</button></a>
+                                        <button type="submit" class="btn btn-danger">削除</button>
                                     </form>
 
                                 </td>

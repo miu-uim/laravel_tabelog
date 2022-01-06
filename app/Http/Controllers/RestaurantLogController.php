@@ -92,6 +92,9 @@ class RestaurantLogController extends Controller
     public function edit($id)
     {
         //
+        $log = RestaurantLog::find($id);
+
+        return view('logs.edit', compact('log'));
     }
 
     /**
