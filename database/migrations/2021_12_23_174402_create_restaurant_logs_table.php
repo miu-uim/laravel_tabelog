@@ -17,7 +17,7 @@ class CreateRestaurantLogsTable extends Migration
             $table->bigIncrements('id');
             $table->longText('url');
             $table->string('name', 30);
-            $table->string('location', 3);
+            $table->string('location', 4);
             $table->boolean('gone')->default('0');
             $table->timestamp('gone_date')->nullable($value = true);
             $table->timestamps();

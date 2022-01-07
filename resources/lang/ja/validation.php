@@ -87,6 +87,7 @@ return [
     'unique'               => 'その:attributeはすでに使われています。',
     'uploaded'             => ':attributeのアップロードに失敗しました。',
     'url'                  => ':attributeには正しい形式のURLを指定してください。',
+    'tabelogurl'           => '食べログのURLを入力してください。',
 
     /*
     |--------------------------------------------------------------------------
@@ -116,6 +117,12 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'name' => '店舗名',
+        'url' => '店舗URL',
+        'location' => '所在地',
+        'password' => 'パスワード',
+        // 'tabelogurl' => '食べログURL',
+    ],
 
 ];

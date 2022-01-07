@@ -11,6 +11,9 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 
+// バリデーション
+use App\Http\Requests\StoreRestaurantLog;
+
 class RestaurantLogController extends Controller
 {
     /**
@@ -52,7 +55,7 @@ class RestaurantLogController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreRestaurantLog $request)
     {
         //
         $log = new RestaurantLog();
