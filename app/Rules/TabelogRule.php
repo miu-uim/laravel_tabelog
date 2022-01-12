@@ -26,7 +26,8 @@ class TabelogRule implements Rule
     public function passes($attribute, $value)
     {
         //
-        return preg_match('/tabelog/', $value);
+        // return preg_match('/tabelog/', $value);
+        return preg_match("!https://tabelog.com/!", $value);
     }
 
     /**

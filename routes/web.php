@@ -31,3 +31,6 @@ Route::group(['prefix' => 'logs', 'middleware' => 'auth'], function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/list', function () {
+    return view('list');
+});
